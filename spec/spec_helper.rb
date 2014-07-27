@@ -3,6 +3,8 @@ require_relative '../app/server'
 require 'rack/test'
 require 'bundler/setup'
 
+require 'capybara/rspec'
+
 ENV['RACK_ENV'] = 'test'
 Sinatra::Application.environment = :test
 
@@ -13,4 +15,11 @@ module RSpecMixin
   def app() Sinatra::Application end
 end
 
-RSpec.configure { |c| c.include RSpecMixin }
+RSpec.configure { |c|
+  c.include RSpecMixin
+  c.include Capybara::DSL#, feature: true
+  c.include Capybara::RSpecMatchers#, feature: true
+}
+
+
+Capybara.app = Sinatra::Application

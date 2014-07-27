@@ -9,6 +9,10 @@ gem 'neo4j', '>= 3.0.0.alpha.7'
 gem 'neography'
 
 gem 'pdfkit'
-gem 'rspec'
 gem 'shotgun'
-gem 'rack-test'
+
+group :test, :development do
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'capybara'
+end

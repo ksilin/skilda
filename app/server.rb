@@ -16,7 +16,7 @@ SKILL_LEVELS = { "Grundlagen" => "G",
 get '/' do
   @search= params['search']
   @results = @search ? search(@search) : [] 
-  puts "SKILL.all #{@results.inspect}"
+
   erb :index
 end
 
@@ -30,7 +30,6 @@ post '/skills' do
   description = params['description']
   skill = Skill.create!(name:name, description:description)
   skill.categories.create(SkillCategory.find(category_id))
-
   redirect "/skills/#{skill.id}"
 end
 
@@ -45,7 +44,6 @@ end
 post '/persons' do
   firstname = params['firstname']
   lastname = params['lastname']
-  puts "create person: #{firstname} #{lastname}"
   person = Person.create!(firstname:firstname, lastname:lastname)
 
   erb :"person/detail", :locals => { :person => person, :skills => Skill.all, :levels => SKILL_LEVELS  }

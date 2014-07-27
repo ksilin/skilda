@@ -1,4 +1,4 @@
-# skilda
+# skilda [![Build Status](https://secure.travis-ci.org/sschmeck/skilda.png?branch=master)](http://travis-ci.org/sschmeck/skilda)
 
 See [demo application](http://skilda.heroku.com).
 

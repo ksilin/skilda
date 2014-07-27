@@ -1,5 +1,10 @@
-require_relative '../app/server'
-require 'rspec'
+# require_relative '../app/server'
+# require 'rspec'
+# require 'rack/test'
+#
+# require 'bundler/setup'
+# Sinatra::Application.environment = :test
+# Bundler.require :default, Sinatra::Application.environment
 require 'rack/test'
 require 'bundler/setup'
 

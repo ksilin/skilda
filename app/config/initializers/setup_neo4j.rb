@@ -37,5 +37,5 @@ puts "Loading models .."
 model_dir = File.join(File.dirname(__FILE__), '..', '..', 'models')
 Dir.glob(File.join(model_dir, '*.rb')).each do |f|
  puts "  #{File.basename(f, File.extname(f)).camelize}"
- require f 
+ require f
 end

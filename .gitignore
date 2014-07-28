@@ -1,5 +1,6 @@
 .idea
 .bundle/
-/neo4j
+neo4j
+coverage
 
 #Gemfile.lock

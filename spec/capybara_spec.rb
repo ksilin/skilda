@@ -31,9 +31,7 @@ describe 'Skilda Webapp' do
       fill_in('search', :with => 'Jabba')
       click_button('search-btn')
       expect(page).to have_content('Keine Treffer')
-      save_and_open_page
     end
 
   end
-
 end

@@ -15,4 +15,10 @@ group :test, :development do
   gem 'rspec'
   gem 'rack-test'
   gem 'capybara'
+  gem 'coveralls'
+end
+
+group :production do
+  # enable pdfkit on heroku
+  gem 'wkhtmltopdf-heroku'
 end

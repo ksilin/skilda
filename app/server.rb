@@ -3,6 +3,7 @@ require 'sinatra/respond_with'
 
 require_relative 'config/initializers/setup_neo4j'
 
+require 'wkhtmltopdf-heroku' if production?
 require_relative 'business/pdf_creator'
 
 helpers PdfCreator
@@ -30,6 +31,7 @@ post '/skills' do
   description = params['description']
   skill = Skill.create!(name:name, description:description)
   skill.categories.create(SkillCategory.find(category_id))
+
   redirect "/skills/#{skill.id}"
 end
 

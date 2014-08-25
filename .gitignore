@@ -2,5 +2,3 @@
 .bundle/
 neo4j
 coverage
-
-#Gemfile.lock
